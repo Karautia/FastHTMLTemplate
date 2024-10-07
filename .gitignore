@@ -1,0 +1,5 @@
+data/**
+*.lock
+.sesskey
+.env
+**__pycache__**

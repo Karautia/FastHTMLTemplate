@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "package_name"
+version = "0.1.0"
+description = ""
+authors = ["Some Author <someauthor@web.com>"]
+readme = "README.md"
+packages = [{include = "package_name"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-fasthtml = "^0.5.1"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
