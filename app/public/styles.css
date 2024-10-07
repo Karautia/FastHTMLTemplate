@@ -1,0 +1,111 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#h1{
+    font-size: 2em;
+    font-family: 'Montsserat', sans-serif;
+    font-weight: 800;
+}
+#navbar {
+    position: fixed;  /* Fix the navbar to the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Make the navbar full-width */
+    height: 80px;  /* Set the height of the navbar */
+    background-color: rgba(0, 0, 0, 0);  /* Transparent background */
+    color: white;  /* White text */
+    display: flex;  /* Use flexbox to align items */
+    justify-content: space-between;  /* Spread items across the navbar */
+    padding: 20px 0px;  /* Add padding on the left and right */
+    z-index: 1000;  /* High z-index to ensure it's above the map */
+}
+#logo {
+    flex: 1;
+    text-align: left;  /* Left-aligned text */
+    font-size: 2em;
+    font-family: 'Montsserat', sans-serif;  /* Use Open Sans font */
+    font-weight: 800;
+    margin-left: 50px;
+}
+
+/* Style for gallery container */
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+/* Style for images within the gallery */
+#gallery img {
+    flex: 1 1 200px;
+    padding-bottom: 15px;
+    border-radius: 4px; /* Optional: rounds the corners */
+    object-fit: cover; /* Ensures image fills the cell without distortion */
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+/* Hover effect for images */
+#gallery img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+button {
+    background: linear-gradient(to right, #4B34B3, #6750B0);
+    border: none;
+    color: #fff;
+    padding: 0px 40px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;  
+    border-radius: 24px;
+    cursor: pointer;
+    margin-right: 50px; /* Ensures no additional margin is added */
+    height: 40px;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: linear-gradient(to right, #6750B0, #8d79ce);  /* Slight gradient change on hover */
+}
+body {
+    background: linear-gradient(to right, #121327, #202246); /* Gradient colors */
+    margin: 0;
+    padding-top: 80px;
+    font-family: Open Sans, sans-serif;
+}
+
+/* Style for search bar container */
+#searchbar {
+    position: fixed;
+    bottom: 50px;
+    display: flex;
+    width: 100vw;
+    height: 60px;
+    justify-content: center;
+}
+#input-field {
+    width: 60vw;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;  
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5em;
+    height: 100%;
+    backdrop-filter: blur(24px);
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+/* Style for search button inside the input field */
+#search-button {
+    height: 60px;
+}
+
+/* Style for image within the search button */
+#search-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
