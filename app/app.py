@@ -6,13 +6,14 @@ import os
 
 
 public_path = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, "public")))
-data_path = os.path.abspath("/workspaces/FastHTMLTemplate/data")
+data_path = os.path.join(public_path, "data")
 
 ######## fastHTML app #########
 app, rt = fast_app(static_path=public_path)
 
-image_paths = get_image_paths(data_path)
-print(image_paths)
+# Strip the paths to keep only "/data/..." part
+stripped_image_paths = [os.path.relpath(path, public_path) for path in get_image_paths(data_path)]
+
 # frontend
 @rt('/')
 def get():
@@ -29,7 +30,7 @@ def get():
                 id="navbar"  # Main navbar div
             ),
             # content window
-            ImageGallery(image_paths),
+            ImageGallery(stripped_image_paths),
             # search bar
             Div(
                 Div(
