@@ -1,6 +1,6 @@
 from fasthtml.common import *
 from .components.image_gallery import ImageGallery
-from package_name.main import get_image_paths
+from package_name.utils import get_image_paths
 import os
 
 
