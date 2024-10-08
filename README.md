@@ -6,7 +6,8 @@ This repository provides a template for developing FastHTML applications with a 
 
 - `app/`: Contains frontend-related code
   - `components/`: Reusable FastHTML components
-  - `public/`: Static assets
+  - `public/`: Static assets. 
+      - `data/` Example images to display.
   - `javascript/`: Client-side JavaScript files
   - `app.py`: Main FastHTML application file
 - `package_name/`: Backend package (replace with your actual package name)
