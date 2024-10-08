@@ -25,20 +25,24 @@ def get():
             # Navbar container
             Div(
                 # Left-aligned logo (now replaced with plain text)
-                Div("FRAME FINDER", id="logo"),  # Replace logo with plain text
-                Button("Action!", id="button"),
-                id="navbar"  # Main navbar div
+                Div("FRAME FINDER", cls="logo"),  # Replace logo with plain text
+                Button("Action!", cls="button"),
+                cls="navbar"  # Main navbar div
             ),
             # content window
             ImageGallery(stripped_image_paths),
             # search bar
             Div(
-                Div(
-                    Input(type="text", placeholder="Search...", id="input-field"),
-                    Button(
-                        Img(src="auto-fix.svg", id="search-icon"),
-                        id="search-button"),
+                Input(type="text", placeholder="Search...", cls="input-field"),
+                Button(
+                    Div(
+                        Img(src="auto-fix.svg", alt="Search", id="search-icon"),
+                        cls="search-icon-container"
                     ),
-                id="searchbar"),
+                    id="search-button", cls="button"
+                ),
+                cls="searchbar"
+            ),
+
         ),
     )
