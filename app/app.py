@@ -21,7 +21,9 @@ stripped_image_paths = [os.path.relpath(path, public_path) for path in get_image
 @rt('/')
 def get():
     return Html(
+        # head  
         get_head_component(),
+        # body
         Body(
             # Navbar container
             get_navbar_component(),
@@ -29,6 +31,7 @@ def get():
             ImageGallery(stripped_image_paths),
             # search bar
             get_search_bar_component(),
-
         ),
+        # footer
+        # get_footer_component(),
     )
