@@ -1,5 +1,8 @@
 from fasthtml.common import *
 from .components.image_gallery import ImageGallery
+from .components.head_component import get_head_component
+from .components.search_bar import get_search_bar_component
+from .components.navbar import get_navbar_component
 from package_name.utils import get_image_paths
 import os
 
@@ -18,31 +21,14 @@ stripped_image_paths = [os.path.relpath(path, public_path) for path in get_image
 @rt('/')
 def get():
     return Html(
-        Head(
-            Link(rel="stylesheet", href="styles.css")
-        ),
+        get_head_component(),
         Body(
             # Navbar container
-            Div(
-                # Left-aligned logo (now replaced with plain text)
-                Div("FRAME FINDER", cls="logo"),  # Replace logo with plain text
-                Button("Action!", cls="button"),
-                cls="navbar"  # Main navbar div
-            ),
+            get_navbar_component(),
             # content window
             ImageGallery(stripped_image_paths),
             # search bar
-            Div(
-                Input(type="text", placeholder="Search...", cls="input-field"),
-                Button(
-                    Div(
-                        Img(src="auto-fix.svg", alt="Search", id="search-icon"),
-                        cls="search-icon-container"
-                    ),
-                    id="search-button", cls="button"
-                ),
-                cls="searchbar"
-            ),
+            get_search_bar_component(),
 
         ),
     )
